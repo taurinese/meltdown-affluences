@@ -30,10 +30,6 @@ class AvailableDateReservationRule implements Rule
         // Convertir les dates en Carbon pour vérifier le jour (Lundi, Mardi, etc...) et l'heure
         $date = Carbon::parse($value);
         $horaires = config('information.horaires');
-        var_dump($date);
-        var_dump($horaires);
-        var_dump($horaires[$date->formatLocalized('%A')]['open']);
-        die();
         if(isset($horaires[$date->formatLocalized('%A')]['open'])){
             $horaire = [
                 'open' => $date->copy()->startOfDay()->addHours(intval($horaires[$date->formatLocalized('%A')]['open'])),

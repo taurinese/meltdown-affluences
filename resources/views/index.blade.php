@@ -60,13 +60,13 @@
         <p>Dimanche</p>
       </div>
       <div class="grid grid-cols-7 pt-50 content-center">
-        <p>{{ $horaires['Lundi'] ? $horaires['Lundi']['open'] . ' - ' . $horaires['Lundi']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Mardi'] ? $horaires['Mardi']['open'] . ' - ' . $horaires['Mardi']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Mercredi'] ? $horaires['Mercredi']['open'] . ' - ' . $horaires['Mercredi']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Jeudi'] ? $horaires['Jeudi']['open'] . ' - ' . $horaires['Jeudi']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Vendredi'] ? $horaires['Vendredi']['open'] . ' - ' . $horaires['Vendredi']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Samedi'] ? $horaires['Samedi']['open'] . ' - ' . $horaires['Samedi']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Dimanche'] ? $horaires['Dimanche']['open'] . ' - ' . $horaires['Dimanche']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Monday'] ? $horaires['Monday']['open'] . ' - ' . $horaires['Monday']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Tuesday'] ? $horaires['Tuesday']['open'] . ' - ' . $horaires['Tuesday']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Wednesday'] ? $horaires['Wednesday']['open'] . ' - ' . $horaires['Wednesday']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Thursday'] ? $horaires['Thursday']['open'] . ' - ' . $horaires['Thursday']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Friday'] ? $horaires['Friday']['open'] . ' - ' . $horaires['Friday']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Saturday'] ? $horaires['Saturday']['open'] . ' - ' . $horaires['Saturday']['close'] : "Fermé" }}</p>
+        <p>{{ $horaires['Sunday'] ? $horaires['Sunday']['open'] . ' - ' . $horaires['Sunday']['close'] : "Fermé" }}</p>
       </div>
     </div>
 </div>

@@ -2,28 +2,28 @@
 
 return [
     'horaires' => [
-        "Lundi" => [
+        "Monday" => [
             'open' => "09:00",
             'close' => "18:00"]
             ,
-        "Mardi" =>  [
+        "Tuesday" =>  [
             'open' => "09:00",
             'close' => "18:00"]
             ,
-        "Mercredi" =>  [
+        "Wednesday" =>  [
             'open' => "09:00",
             'close' => "18:00"]
             ,
-        "Jeudi" =>  [
+        "Thursday" =>  [
             'open' => "09:00",
             'close' => "18:00"]
             ,
-        "Vendredi" =>  [
+        "Friday" =>  [
             'open' => "09:00",
             'close' => "18:00"]
             ,
-        "Samedi" => null,
-        "Dimanche" => null,
+        "Saturday" => null,
+        "Sunday" => null,
     ],
     'duree' => 1,
     'maxReservationHeure' => 2,

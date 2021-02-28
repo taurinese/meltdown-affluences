@@ -11,7 +11,7 @@
             <div class="flex items-center justify-between w-full md:w-auto">
               <a href="{{ route('index') }}">
                 <span class="sr-only">Accueil</span>
-                <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg">
+                <img class="h-8 w-auto sm:h-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Blue_computer_icon.svg/1024px-Blue_computer_icon.svg.png">
               </a>
             </div>
           </div>

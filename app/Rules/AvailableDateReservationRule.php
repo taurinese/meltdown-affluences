@@ -32,6 +32,7 @@ class AvailableDateReservationRule implements Rule
         $horaires = config('information.horaires');
         var_dump($date);
         var_dump($horaires);
+        var_dump($horaires[$date->formatLocalized('%A')]['open']);
         die();
         if(isset($horaires[$date->formatLocalized('%A')]['open'])){
             $horaire = [

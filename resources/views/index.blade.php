@@ -42,14 +42,14 @@
 @include('partials.terminal')
 
 <div class="w-4/12 mx-auto mb-10">
-  <img class="w-full" src="https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_77884/node_77887/meltdown-paris-joueurs-3-%7C-630x405-%7C-%C2%A9-meltdown-paris/21045799-1-fre-FR/Meltdown-Paris-Joueurs-3-%7C-630x405-%7C-%C2%A9-Meltdown-Paris.jpg" alt="Meltdown Paris">
+  <img class="w-full rounded-lg" src="https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_77884/node_77887/meltdown-paris-joueurs-3-%7C-630x405-%7C-%C2%A9-meltdown-paris/21045799-1-fre-FR/Meltdown-Paris-Joueurs-3-%7C-630x405-%7C-%C2%A9-Meltdown-Paris.jpg" alt="Meltdown Paris">
 </div>
 
 
 
 <div class="w-10/12 mx-auto mb-10">
     <h1 class="text-3xl text-center mb-5">Horaires</h1>
-    <div class="grid grid-rows-2 text-center bg-gray-50 rounded-lg gap-3 p-3">
+    <div class="grid grid-rows-2 text-center rounded-lg gap-3 p-3">
       <div class="grid grid-cols-7 border-solid border-b-2 border-black pb-3 content-center">
         <p>Lundi</p>
         <p>Mardi</p>

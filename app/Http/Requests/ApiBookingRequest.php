@@ -11,7 +11,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
 
-class BookingFormRequest extends FormRequest
+class ApiBookingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -50,6 +50,24 @@ class BookingFormRequest extends FormRequest
             'datetime.required' => 'Une date de réservation est obligatoire.',
             'cgu.required' => 'Vous devez accepter les CGU avant de réserver votre place.'
         ];
+    }
+
+    protected function failedValidation(Validator $validator) { 
+        $isFailed = false;
+        $responseCode = 0;
+        foreach($validator->failed() as $ruleValidate){
+            if(array_key_exists("Email", $ruleValidate) OR array_key_exists("Required", $ruleValidate)){               
+                $responseCode= 422;
+                $isFailed = true;
+            }
+        }
+        if(!$isFailed) $responseCode = 400;
+        throw new HttpResponseException(
+          response()->json([
+            'status' => false,
+            'messages' => $validator->errors()->all()              
+        ], $responseCode)
+        ); 
     }
 
 }

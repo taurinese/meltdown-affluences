@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\BookingFormRequest;
+use App\Http\Requests\ApiBookingRequest;
 use App\Rules\AlreadyDeletedRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +15,7 @@ class ApiBookingController extends Controller
         return response()->json(Config::get('information'), 200);
     }
 
-    public function addBooking(BookingFormRequest $request){
+    public function addBooking(ApiBookingRequest $request){
         $params = [
             'email' => $request->get('email'),
             'date' => $request->get('datetime'),

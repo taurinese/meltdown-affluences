@@ -9,7 +9,7 @@
         <span class="inline-block align-middle">
             <ul>
                 @foreach($errors->all() as $error)
-                    <li> Vous devez confirmer la demande d'annulation.</li> <!-- Normalement c'est {{ $error }} mais vu qu'il n'y a qu'une erreur possible ça évite de devoir créer une request pour personnaliser le message d'erreur. -->
+                    <li> {{ $error }} </li> <!-- Normalement c'est {{ $error }} mais vu qu'il n'y a qu'une erreur possible ça évite de devoir créer une request pour personnaliser le message d'erreur. -->
                 @endforeach
             </ul>
         </span>

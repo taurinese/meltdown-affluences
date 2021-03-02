@@ -2,18 +2,17 @@
 
 namespace App\Rules;
 
-use Carbon\Carbon;
 use Illuminate\Contracts\Validation\Rule;
+use Illuminate\Support\Facades\DB;
 
-class ReservationIsPastRule implements Rule
+class AlreadyDeletedRule implements Rule
 {
-    
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($token)
     {
         //
     }
@@ -27,9 +26,8 @@ class ReservationIsPastRule implements Rule
      */
     public function passes($attribute, $value)
     {
-        // Vérifier si la date est cohérente
-        if(Carbon::parse($value)->isPast()) return false;
-        else return true;
+        if(DB::table('booking')->where('token', '=', $value)->exists()) return true;
+        else return false;
     }
 
     /**
@@ -39,11 +37,6 @@ class ReservationIsPastRule implements Rule
      */
     public function message()
     {
-        return 'La date de réservation sélectionnée est impossible.';
+        return "Aucune réservation n'existe avec ce code.";
     }
-
-    public function validate(){
-        
-    }
-    
 }

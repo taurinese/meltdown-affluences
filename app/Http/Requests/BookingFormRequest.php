@@ -6,7 +6,10 @@ use App\Rules\AlreadyExistsReservationRule;
 use App\Rules\AvailableDateReservationRule;
 use App\Rules\MaximumReservationRule;
 use App\Rules\ReservationIsPastRule;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+
 
 class BookingFormRequest extends FormRequest
 {
@@ -43,8 +46,28 @@ class BookingFormRequest extends FormRequest
     {
         return [
             'email.required' => 'Une adresse mail est obligatoire.',
+            "email.email" => "Vous devez entrer une adresse mail correcte.",
             'datetime.required' => 'Une date de réservation est obligatoire.',
             'cgu.required' => 'Vous devez accepter les CGU avant de réserver votre place.'
         ];
     }
+
+    protected function failedValidation(Validator $validator) { 
+        $isFailed = false;
+        $responseCode = 0;
+        foreach($validator->failed() as $ruleValidate){
+            if(array_key_exists("Email", $ruleValidate) OR array_key_exists("Required", $ruleValidate)){               
+                $responseCode= 422;
+                $isFailed = true;
+            }
+        }
+        if(!$isFailed) $responseCode = 400;
+        throw new HttpResponseException(
+          response()->json([
+            'status' => false,
+            'messages' => $validator->errors()->all()              
+        ], $responseCode)
+        ); 
+    }
+
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Rules\AlreadyDeletedRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -21,8 +21,12 @@ class BookingCancelController extends Controller
     }
 
     public function delete(Request $request, $token){
+        $request->request->add(['token' => $token]);
         $request->validate([
-            'confirm_cancel' => 'required'
+            'confirm_cancel' => ['required'],
+            'token' => [new AlreadyDeletedRule($token)]
+        ], [
+            'confirm_cancel.required' => "Vous devez confirmer l'annulation de votre réservation."
         ]);
         $data = DB::table('booking')->select(['date', 'email'])->where('token', '=', $token)->get()->toArray()[0];
         $params = [
@@ -30,8 +34,6 @@ class BookingCancelController extends Controller
             'date' => Carbon::parse($data->date)->format('d-m-Y à H:i')
         ];
 
-        /* var_dump($params);
-        die(); */
         DB::table('booking')->where('token', '=', $token)->delete();
         Mail::send('emails.cancel', $params, function($m) use ($params){
             $m->from($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);

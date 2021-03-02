@@ -29,7 +29,7 @@ class ApiBookingController extends Controller
             'created_at' => Carbon::now()->addHour()
         ]);
         $params['date'] = Carbon::parse($params['date'])->format('d-m-Y à H:i');
-        return response()->json('Votre réservation pour le ' . $params['date'] . ' a été prise en compte.', 201);
+        return response()->json(["message" => 'Votre réservation pour le ' . $params['date'] . ' a été prise en compte.', "token" => $params['token'], "status" => true], 201);
     }
 
     public function deleteBooking(Request $request, $token){

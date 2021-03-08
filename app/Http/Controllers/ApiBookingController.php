@@ -18,7 +18,7 @@ class ApiBookingController extends Controller
     public function addBooking(ApiBookingRequest $request){
         $params = [
             'email' => $request->get('email'),
-            'date' => substr($request->get('datetime'), -2) . "00",
+            'date' => substr($request->get('datetime'), 0, -2) . "00",
             'token' => md5(uniqid(true))
         ];
 

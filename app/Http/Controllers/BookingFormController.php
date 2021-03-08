@@ -19,7 +19,7 @@ class BookingFormController extends Controller
     {
         $params = [
             'email' => $request->get('email'),
-            'date' => substr($request->get('datetime'), -5) . '00:00',
+            'date' => $request->get('datetime'),
             'token' => md5(uniqid(true))
         ];
         var_dump($params);

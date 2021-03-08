@@ -31,7 +31,7 @@
     @csrf 
         <div class="mb-5 w-full">
             <label class="w-full" for="datetime">Date et horaire de réservation</label> <br>
-            <input class="w-full mt-5 p-3 rounded-lg" type="datetime-local" name="datetime" id="datetime" step="3600" value="{{ old('datetime', Carbon\Carbon::now('Europe/Paris')->format('Y-m-d\TH:00')) }}" min="{{ Carbon\Carbon::now('Europe/Paris')->format('Y-m-d\TH:00') }}" value="{{ old('datetime')}}" required> <br>     
+            <input class="w-full mt-5 p-3 rounded-lg" type="datetime-local" name="datetime" id="datetime" step="3600" value="{{ old('datetime', Carbon\Carbon::now('Europe/Paris')->format('Y-m-d\TH:00')) }}" min="{{ Carbon\Carbon::now('Europe/Paris')->format('Y-m-d\TH:00') }}" required> <br>     
         </div>
         <div class="mb-5 w-full">
             <label class="w-full" for="email">Adresse email</label> <br>

@@ -22,8 +22,8 @@ class BookingFormController extends Controller
             'date' => substr($request->get('datetime'), 0, -2) . "00",
             'token' => md5(uniqid(true))
         ];
-        var_dump($params);
-        die();
+/*         var_dump($params);
+        die(); */
         DB::table('booking')->insert([
             'email' => $params['email'],
             'token' => $params['token'],

@@ -49,6 +49,8 @@ return [
     ],
     'duree' => 1,
     'maxReservationHeure' => 2,
-    'name' => 'Meltdown Paris'
+    'name' => 'Meltdown Paris',
+    'address' => '33 Boulevard Richard-Lenoir, 75011 Paris',
+    'description' => "Vaste bar 100 % eSport où l'équipement abouti des gamers contraste avec l'esprit chantier inachevé du cadre."
 
 ];

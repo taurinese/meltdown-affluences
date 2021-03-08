@@ -1,3 +1,5 @@
+<?php $infos = config('information') ?>
+
 <div class="w-6/12 mx-auto mb-10">
   <div class="coding inverse-toggle px-5 pt-4 shadow-lg text-gray-100 text-sm font-mono subpixel-antialiased 
               bg-gray-800  pb-6 pt-4 rounded-lg leading-normal overflow-hidden">
@@ -9,21 +11,21 @@
       <div class="mt-4 flex">
           <span class="text-green-400">welcome:~$</span>
           <p class="flex-1 typing items-center pl-2">
-              Bienvenue au Meltdown Paris! 
+              Bienvenue au {{ $infos['name']}}! 
               <br>
           </p>
       </div>
       <div class="mt-4 flex">
           <span class="text-green-400">description:~$</span>
           <p class="flex-1 typing items-center pl-2">
-            Vaste bar 100 % eSport où l'équipement abouti des gamers contraste avec l'esprit chantier inachevé du cadre.
+                {{ $infos['description'] }}
               <br>
           </p>
       </div>
       <div class="mt-4 flex">
           <span class="text-green-400">adress:~$</span>
           <p class="flex-1 typing items-center pl-2">
-            33 Boulevard Richard-Lenoir, 75011 Paris
+            {{ $infos['address'] }}
               <br>
           </p>
       </div>

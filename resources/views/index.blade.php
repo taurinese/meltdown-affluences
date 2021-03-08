@@ -2,7 +2,7 @@
 
 @section('content')
 
-<?php $horaires = config('information.horaires') ?>
+<?php $infos = config('information') ?>
 
 <style type="text/css">
       /* Set the size of the div element that contains the map */
@@ -60,13 +60,13 @@
         <p>Dimanche</p>
       </div>
       <div class="grid grid-cols-7 pt-50 content-center">
-        <p>{{ $horaires['Monday'] ? $horaires['Monday']['open'] . ' - ' . $horaires['Monday']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Tuesday'] ? $horaires['Tuesday']['open'] . ' - ' . $horaires['Tuesday']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Wednesday'] ? $horaires['Wednesday']['open'] . ' - ' . $horaires['Wednesday']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Thursday'] ? $horaires['Thursday']['open'] . ' - ' . $horaires['Thursday']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Friday'] ? $horaires['Friday']['open'] . ' - ' . $horaires['Friday']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Saturday'] ? $horaires['Saturday']['open'] . ' - ' . $horaires['Saturday']['close'] : "Fermé" }}</p>
-        <p>{{ $horaires['Sunday'] ? $horaires['Sunday']['open'] . ' - ' . $horaires['Sunday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Monday'] ? $infos['horaires']['Monday']['open'] . ' - ' . $infos['horaires']['Monday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Tuesday'] ? $infos['horaires']['Tuesday']['open'] . ' - ' . $infos['horaires']['Tuesday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Wednesday'] ? $infos['horaires']['Wednesday']['open'] . ' - ' . $infos['horaires']['Wednesday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Thursday'] ? $infos['horaires']['Thursday']['open'] . ' - ' . $infos['horaires']['Thursday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Friday'] ? $infos['horaires']['Friday']['open'] . ' - ' . $infos['horaires']['Friday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Saturday'] ? $infos['horaires']['Saturday']['open'] . ' - ' . $infos['horaires']['Saturday']['close'] : "Fermé" }}</p>
+        <p>{{ $infos['horaires']['Sunday'] ? $infos['horaires']['Sunday']['open'] . ' - ' . $infos['horaires']['Sunday']['close'] : "Fermé" }}</p>
       </div>
     </div>
 </div>
